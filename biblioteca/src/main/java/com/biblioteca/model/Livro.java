@@ -1,16 +1,20 @@
 package com.biblioteca.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Entity
+@Entity(name = "livro")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Livro {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private boolean disponivel;
     private boolean exemplarBiblioteca;
     @ManyToOne
@@ -19,23 +23,4 @@ public class Livro {
     // Outros atributos e métodos getters/setters
 
     // Getters e Setters
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
-    }
-    public boolean isExemplarBiblioteca() {
-        return exemplarBiblioteca;
-    }
-    public void setExemplarBiblioteca(boolean exemplarBiblioteca) {
-        this.exemplarBiblioteca = exemplarBiblioteca;
-    }
-    public Titulo getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(Titulo titulo) {
-        this.titulo = titulo;
-    }
-            
 }

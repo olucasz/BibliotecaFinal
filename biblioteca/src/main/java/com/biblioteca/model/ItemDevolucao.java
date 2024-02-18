@@ -2,7 +2,16 @@ package com.biblioteca.model;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Entity(name = "item_devolucao")//nome da tabela
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class ItemDevolucao {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,49 +26,6 @@ public class ItemDevolucao {
     @ManyToOne
     @JoinColumn(name = "devolucao_id", referencedColumnName = "id")
     private Devolucao devolucao;
-
     // Construtores, getters e setters
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public Date getDataDevolucao() {
-        return dataDevolucao;
-    }
-    public void setDataDevolucao(Date dataDevolucao) {
-        this.dataDevolucao = dataDevolucao;
-    }
-    public int getDiasAtraso() {
-        return diasAtraso;
-    }
-    public void setDiasAtraso(int diasAtraso) {
-        this.diasAtraso = diasAtraso;
-    }
-    public float getValor() {
-        return valor;
-    }
-    public void setValor(float valor) {
-        this.valor = valor;
-    }
-    public float getMulta() {
-        return multa;
-    }
-    public void setMulta(float multa) {
-        this.multa = multa;
-    }
-    public Livro getLivro() {
-        return livro;
-    }
-    public void setLivro(Livro livro) {
-        this.livro = livro;
-    }
-    public Devolucao getDevolucao() {
-        return devolucao;
-    }
-    public void setDevolucao(Devolucao devolucao) {
-        this.devolucao = devolucao;
-    }
     
 }
