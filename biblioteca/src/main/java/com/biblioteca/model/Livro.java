@@ -18,7 +18,7 @@ public class Livro {
     private boolean disponivel;
     private boolean exemplarBiblioteca;
     @ManyToOne
-    @JoinColumn(name = "titulo_id", referencedColumnName = "id")
+    @JoinColumn(name = "titulo_isbn", referencedColumnName = "isbn")
     private Titulo titulo;
     // Outros atributos e métodos getters/setters
 

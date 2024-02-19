@@ -1,13 +1,11 @@
 package com.biblioteca.dao;
 
-import com.biblioteca.model.Titulo;
-
 import java.util.List;
 
+import com.biblioteca.model.Titulo;
+
 public interface TituloDAO {
-    Titulo findById(Long id);
+    Titulo save(Titulo titulo);
     Titulo findByIsbn(String isbn);
     List<Titulo> findAll();
-    Titulo save(Titulo titulo);
-
 }

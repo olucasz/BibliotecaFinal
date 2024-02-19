@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+
 import java.util.List;
 
 @Repository
@@ -17,13 +18,19 @@ public class LivroRepository implements LivroDAO {
     private EntityManager entityManager;
 
     @Override
-    public Livro findById(String id) {
-        return null;
+    public Livro findById(Long id) {
+        return entityManager.find(Livro.class, id);
     }
 
     @Override
     public List<Livro> findAll() {
-        return entityManager.createQuery("SELECT a FROM livros a", Livro.class).getResultList();
+        return entityManager.createQuery("SELECT a FROM livro a", Livro.class).getResultList();
+    }
+
+    @Override
+    public Livro findByIsbn(String isbn) {
+        return entityManager.createQuery("SELECT a FROM livro a WHERE a.titulo.isbn = :isbn", Livro.class)
+            .setParameter("isbn", isbn).getSingleResult();
     }
 
     @Transactional
