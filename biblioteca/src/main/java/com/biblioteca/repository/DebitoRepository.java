@@ -15,15 +15,25 @@ public class DebitoRepository implements DebitoDAO {
     private EntityManager entityManager;
 
     @Override
-    public List<Debito> listarDebitosAluno(String matricula) {
-        return entityManager.createQuery("SELECT d FROM debitos d WHERE d.aluno.matricula = :matricula", Debito.class)
+    public List<Debito> findByDebitos(String matricula) {
+        return entityManager.createQuery("SELECT d FROM debito d WHERE d.aluno.matricula = :matricula", Debito.class)
                 .setParameter("matricula", matricula)
                 .getResultList();
     }
 
+    @Override
+    public Debito findById(Long id) {
+        return entityManager.find(Debito.class, id);
+    }
+
+    @Override
+    public List<Debito> findAll() {
+        return entityManager.createQuery("SELECT d FROM debito d", Debito.class).getResultList();
+    }
+
     @Transactional
     @Override
-    public Debito adicionarDebito(Debito debito) {
+    public Debito save(Debito debito) {
         entityManager.persist(debito);
         return debito;
     }

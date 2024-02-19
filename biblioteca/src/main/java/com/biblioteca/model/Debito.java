@@ -18,6 +18,7 @@ public class Debito {
     private Long id;
     private int valor;
     private Date data;
+    private boolean isPago;
     @ManyToOne
     @JoinColumn(name = "aluno_matricula", referencedColumnName = "matricula")
     private Aluno aluno;
