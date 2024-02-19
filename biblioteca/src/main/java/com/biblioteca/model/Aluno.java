@@ -13,7 +13,6 @@ import lombok.Setter;
 @Setter
 public class Aluno {
     @Id
-    @Column(unique = true)
     private String matricula;
 
     private String nome;

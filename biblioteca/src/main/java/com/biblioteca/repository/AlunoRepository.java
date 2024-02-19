@@ -17,14 +17,14 @@ public class AlunoRepository implements AlunoDAO {
 
     @Override
     public Aluno findByMatricula(String matricula) {
-            return entityManager.createQuery("SELECT a FROM alunos a WHERE a.matricula = :matricula", Aluno.class)
+            return entityManager.createQuery("SELECT a FROM aluno a WHERE a.matricula = :matricula", Aluno.class)
                     .setParameter("matricula", matricula)
                     .getSingleResult();
 
     }
     @Override
     public List<Aluno> findAll() {
-        return entityManager.createQuery("SELECT a FROM alunos a", Aluno.class).getResultList();
+        return entityManager.createQuery("SELECT a FROM aluno a", Aluno.class).getResultList();
     }
     
     @Transactional
