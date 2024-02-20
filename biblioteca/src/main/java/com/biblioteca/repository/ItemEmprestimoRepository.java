@@ -17,24 +17,24 @@ public class ItemEmprestimoRepository implements ItemEmprestimoDAO {
 
     @Override
     public ItemEmprestimo findById(Long id) {
-        return null;
+        return entityManager.find(ItemEmprestimo.class, id);
     }
 
-    @Override
-    public ItemEmprestimo findByEmprestimo(Long emprestimoId) {
-        return null;
-    }
+    // @Override
+    // public ItemEmprestimo findByEmprestimo(Long emprestimoId) {
+    //     return null;
+    // }
 
-    @Override
-    public boolean findByLivro(Long livroId) {
-        return entityManager.createQuery("SELECT EXISTS (SELECT a FROM itens_emprestimo a WHERE a.livro.id = :livro_id)", Boolean.class)
-                .setParameter("livro_id", livroId)
-                .getSingleResult();
-    }
+    // @Override
+    // public boolean findByLivro(Long livroId) {
+    //     return entityManager.createQuery("SELECT EXISTS (SELECT a FROM itens_emprestimo a WHERE a.livro.id = :livro_id)", Boolean.class)
+    //             .setParameter("livro_id", livroId)
+    //             .getSingleResult();
+    // }
 
     @Override
     public List<ItemEmprestimo> findAll() {
-        return entityManager.createQuery("SELECT a FROM itens_emprestimo a", ItemEmprestimo.class).getResultList();
+        return entityManager.createQuery("SELECT a FROM item_emprestimo a", ItemEmprestimo.class).getResultList();
     }
 
     @Transactional

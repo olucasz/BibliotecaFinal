@@ -48,25 +48,25 @@ public class LivroController {
         return ResponseEntity.ok(livroRepository.findById(id));
     }
 
-    //função para verificar livro
-    public Boolean verificaLivro(Long id){
-        //Verifica se o livro já está cadastrado
-        if (livroRepository.findById(id) != null) {
-            return true;
-        }
-        Livro livro = livroRepository.findById(id);
-        //Verifica se o livro está disponivel
-        if(livro.isDisponivel() == true){
-            return true;
-        }
-        //Verifica se é exemplar
-        if(livro.isExemplarBiblioteca() == true){
-            return true;
-        }
+    // //função para verificar livro
+    // public Boolean verificaLivro(Long id){
+    //     //Verifica se o livro já está cadastrado
+    //     if (livroRepository.findById(id) != null) {
+    //         return true;
+    //     }
+    //     Livro livro = livroRepository.findById(id);
+    //     //Verifica se o livro está disponivel
+    //     if(livro.isDisponivel() == true){
+    //         return true;
+    //     }
+    //     //Verifica se é exemplar
+    //     if(livro.isExemplarBiblioteca() == true){
+    //         return true;
+    //     }
     
-        return false;
+    //     return false;
 
-    }
+    // }
     
     public Integer verPrazo(String isbn){
         Titulo titulo = tituloRepository.findByIsbn(isbn);

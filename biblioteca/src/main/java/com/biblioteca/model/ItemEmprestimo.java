@@ -24,6 +24,6 @@ public class ItemEmprestimo {
     @ManyToOne
     @JoinColumn(name = "emprestimo_id", referencedColumnName = "id")
     private Emprestimo emprestimo;
-
+  
     // Construtores, getters e setters
 }

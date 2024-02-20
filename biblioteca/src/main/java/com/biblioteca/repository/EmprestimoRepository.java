@@ -17,17 +17,19 @@ public class EmprestimoRepository implements EmprestimoDAO {
 
     @Override
     public Emprestimo findById(Long id) {
-        return null;
+        return entityManager.find(Emprestimo.class, id);
     }
 
     @Override
-    public Emprestimo findByAlunoMatricula(String matricula) {
-        return null;
+    public Emprestimo findByMatricula(String matricula) {
+        return entityManager.createQuery("SELECT a FROM emprestimo a WHERE a.matricula = :matricula", Emprestimo.class)
+                .setParameter("matricula", matricula)
+                .getSingleResult();
     }
 
     @Override
     public List<Emprestimo> findAll() {
-        return entityManager.createQuery("SELECT a FROM emprestimos a", Emprestimo.class).getResultList();
+        return entityManager.createQuery("SELECT a FROM emprestimo a", Emprestimo.class).getResultList();
     }
 
     @Transactional

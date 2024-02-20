@@ -28,16 +28,16 @@ public class TituloController {
     @Autowired
     private AutorRepository autorRepository;
     @PostMapping
-    public ResponseEntity<Titulo> cadastrarTitulo(@RequestBody Titulo titulo) {
+    public ResponseEntity<Titulo> criarTitulo(@RequestBody Titulo titulo) {
         return ResponseEntity.ok(tituloRepository.save(titulo));
     }
 
     @GetMapping("/{isbn}")
-    public ResponseEntity<Titulo> encontrarPorIsbn(@PathVariable(value = "isbn") String isbn) {
+    public ResponseEntity<Titulo> findByIsbn(@PathVariable(value = "isbn") String isbn) {
         return ResponseEntity.ok(tituloRepository.findByIsbn(isbn));
     }
     @GetMapping
-    public ResponseEntity<List<Titulo>> listarTodos() {
+    public ResponseEntity<List<Titulo>> findAll() {
         return ResponseEntity.ok(tituloRepository.findAll());
     }
 

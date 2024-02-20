@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface EmprestimoDAO {
     Emprestimo findById(Long id);
-    Emprestimo findByAlunoMatricula(String matricula);
+    Emprestimo findByMatricula(String matricula);
     List<Emprestimo> findAll();
     Emprestimo save(Emprestimo emprestimo);
 }
