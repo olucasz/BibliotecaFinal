@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.model.Aluno;
 import com.biblioteca.repository.AlunoRepository;
-import com.biblioteca.repository.DebitoRepository;
+// import com.biblioteca.repository.DebitoRepository;
 
 @RestController
 @RequestMapping("/aluno")
