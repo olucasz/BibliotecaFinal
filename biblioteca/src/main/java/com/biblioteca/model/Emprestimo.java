@@ -21,7 +21,6 @@ public class Emprestimo {
     private Long id;
     private Date dataEmprestimo;
     private Date dataPrevista;
-    private float multa;
     @OneToOne
     @Nullable
     private Devolucao devolucao;
@@ -29,5 +28,4 @@ public class Emprestimo {
     private Aluno aluno;
     // Outros atributos e métodos getters/setters
     // Getters e Setters
-    
 }

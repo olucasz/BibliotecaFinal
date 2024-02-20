@@ -31,10 +31,18 @@ public class DebitoRepository implements DebitoDAO {
         return entityManager.createQuery("SELECT d FROM debito d", Debito.class).getResultList();
     }
 
+
     @Transactional
     @Override
     public Debito save(Debito debito) {
         entityManager.persist(debito);
         return debito;
+    }
+
+    public boolean verificarDebito(String matricula) {
+        if (findByDebitos(matricula).size() > 0){
+            return true;
+        }
+        return false;
     }
 }

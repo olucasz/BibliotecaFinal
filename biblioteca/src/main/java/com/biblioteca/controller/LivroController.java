@@ -1,6 +1,6 @@
 package com.biblioteca.controller;
 
-import java.util.Date;
+// import java.util.Date;
 import java.util.List;
 
 import org.apache.coyote.BadRequestException;
@@ -70,10 +70,6 @@ public class LivroController {
         return true;
 
     }
-
-    //set livro
-    
-    
     public Integer verPrazo(String isbn){
         Titulo titulo = tituloRepository.findByIsbn(isbn);
         return titulo.getPrazo();

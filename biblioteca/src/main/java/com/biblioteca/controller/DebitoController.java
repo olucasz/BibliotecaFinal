@@ -45,12 +45,8 @@ public class DebitoController {
         return ResponseEntity.ok(debitoRepository.findAll());
     }
 
-    // //verificar se o aluno possui debitos
-    // public boolean verificarDebito(String matricula) {
-    //     if (debitoRepository.findByDebitos(matricula).size() > 0){
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
+    //verificar se o aluno possui debitos
+    public boolean verificarDebito(String matricula) {
+        return debitoRepository.verificarDebito(matricula);
+    }
 }
