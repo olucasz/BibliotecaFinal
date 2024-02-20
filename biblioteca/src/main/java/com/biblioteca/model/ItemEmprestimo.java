@@ -1,6 +1,9 @@
 package com.biblioteca.model;
 
 import java.util.Date;
+
+import org.springframework.http.ResponseEntity;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +27,7 @@ public class ItemEmprestimo {
     @ManyToOne
     @JoinColumn(name = "emprestimo_id", referencedColumnName = "id")
     private Emprestimo emprestimo;
+
   
     // Construtores, getters e setters
 }

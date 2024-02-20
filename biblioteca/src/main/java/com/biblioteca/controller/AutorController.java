@@ -36,4 +36,7 @@ public class AutorController {
     public ResponseEntity<List<Autor>> listarTodos() {
         return ResponseEntity.ok(repository.findAll());
     }
+
+    //metodo para verificar debitos
+    
 }

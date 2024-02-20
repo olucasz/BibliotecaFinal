@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.model.Aluno;
 import com.biblioteca.repository.AlunoRepository;
+import com.biblioteca.repository.DebitoRepository;
 
 @RestController
 @RequestMapping("/aluno")
@@ -36,5 +37,11 @@ public class AlunoController {
     public ResponseEntity<Aluno> save(@RequestBody Aluno aluno) {
         return ResponseEntity.ok(alunoRepository.save(aluno));
     }
+
+    // //verifica debito
+    // public boolean verificarDebito(String matricula) {
+    //     Aluno aluno = alunoRepository.findByMatricula(matricula);
+    //     return aluno.getDebito();
+    // }
  
 }

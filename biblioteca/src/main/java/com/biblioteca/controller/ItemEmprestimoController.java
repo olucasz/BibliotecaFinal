@@ -34,6 +34,8 @@ public class ItemEmprestimoController {
     public ResponseEntity<ItemEmprestimo> findById(@PathVariable(value = "id") Long id) {
         return ResponseEntity.ok(itemEmprestimoRepository.findById(id));
     }
+
+    //set livro
 }
 
 

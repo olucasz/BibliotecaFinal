@@ -1,7 +1,9 @@
 package com.biblioteca.controller;
 
+import java.util.Date;
 import java.util.List;
 
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -48,25 +50,29 @@ public class LivroController {
         return ResponseEntity.ok(livroRepository.findById(id));
     }
 
-    // //função para verificar livro
-    // public Boolean verificaLivro(Long id){
-    //     //Verifica se o livro já está cadastrado
-    //     if (livroRepository.findById(id) != null) {
-    //         return true;
-    //     }
-    //     Livro livro = livroRepository.findById(id);
-    //     //Verifica se o livro está disponivel
-    //     if(livro.isDisponivel() == true){
-    //         return true;
-    //     }
-    //     //Verifica se é exemplar
-    //     if(livro.isExemplarBiblioteca() == true){
-    //         return true;
-    //     }
-    
-    //     return false;
 
-    // }
+    //função para verificar livro
+    public Boolean verificaLivro(Long id) throws BadRequestException{
+        //Verifica se o livro já está cadastrado
+        if (livroRepository.findById(id) == null) {
+            return false;
+        }
+        Livro livro = livroRepository.findById(id);
+        //Verifica se o livro está disponivel
+        if(livro.isDisponivel() == false){
+            throw new BadRequestException("Livro não está disponível para empréstimo");
+        }
+        //Verifica se é exemplar
+        if(livro.isExemplarBiblioteca() == false){
+            return false;
+        }
+    
+        return true;
+
+    }
+
+    //set livro
+    
     
     public Integer verPrazo(String isbn){
         Titulo titulo = tituloRepository.findByIsbn(isbn);
