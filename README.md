@@ -18,9 +18,9 @@ O sistema de biblioteca é uma aplicação cliente-servidor com uma interface gr
   ![Home](https://github.com/olucasz/BibliotecaFinal/assets/96064859/faac2981-b939-4268-8f83-160e5e5822a6)
   
 - **Cadastros**
-  ![Cadastro1](![cadastro1](https://github.com/olucasz/BibliotecaFinal/assets/96064859/170e2525-50de-4fa2-a198-d07b68b180e2))
+  ![cadastro1](https://github.com/olucasz/BibliotecaFinal/assets/96064859/170e2525-50de-4fa2-a198-d07b68b180e2)
   
-  ![Cadastro2](![cadastro2](https://github.com/olucasz/BibliotecaFinal/assets/96064859/9211c787-4c60-4636-87a8-0493fb584d43))
+  ![cadastro2](https://github.com/olucasz/BibliotecaFinal/assets/96064859/9211c787-4c60-4636-87a8-0493fb584d43)
   
 - **Listar**
-  ![Listagem](![lista](https://github.com/olucasz/BibliotecaFinal/assets/96064859/6d46d357-5738-4d2c-9d83-332649c8f7aa))
+  ![lista](https://github.com/olucasz/BibliotecaFinal/assets/96064859/6d46d357-5738-4d2c-9d83-332649c8f7aa)
