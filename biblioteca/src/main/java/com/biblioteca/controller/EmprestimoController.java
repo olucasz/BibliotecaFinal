@@ -1,7 +1,7 @@
 package com.biblioteca.controller;
 
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Date;
 // import java.util.ArrayList;
 // import java.util.Date;
@@ -17,10 +17,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.biblioteca.model.Debito;
+// import com.biblioteca.model.Debito;
 import com.biblioteca.model.Emprestimo;
 import com.biblioteca.model.ItemEmprestimo;
-import com.biblioteca.model.Livro;
+// import com.biblioteca.model.Livro;
 import com.biblioteca.repository.EmprestimoRepository;
 
 

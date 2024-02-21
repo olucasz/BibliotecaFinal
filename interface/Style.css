@@ -30,7 +30,7 @@ body {
 }
 
 /* Estilos do formulário */
-#cadastroAlunoForm {
+form {
     background-color: #fff; /* Cor de fundo branca */
     padding: 20px;
     border-radius: 8px;
@@ -38,7 +38,8 @@ body {
 }
 
 /* Estilos dos campos de entrada */
-input[type="text"] {
+input[type="text"],
+select {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -51,16 +52,22 @@ input[type="text"] {
 button[type="button"] {
     background-color: #3498db; /* Cor de fundo azul */
     color: #fff; /* Cor do texto branco */
-    padding: 10px 20px;
+    padding: 10px 65px;
+    display: block;
+    margin: 0 auto;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease; /* Transição suave */
+
 }
 
 button[type="button"]:hover {
     background-color: #2980b9; /* Cor de fundo azul mais escura no hover */
+    /*aumentar e siminuir suavemente o botao*/
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
 }
 
 /* Estilos para labels */

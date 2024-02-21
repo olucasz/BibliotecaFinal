@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Livro</title>
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<div class="container">
+  <h2 class="titulo">Cadastro de Livro</h2>
+
+  <form id="cadastroLivroForm">
+    <label for="isbn">ISBN:</label><br>
+    <input type="text" id="isbn" name="isbn" placeholder="Digite o ISBN"><br><br>
+    
+    <label for="disponivel">Disponível:</label><br>
+    <select id="disponivel" name="disponivel">
+      <option value="true">Sim</option>
+      <option value="false">Não</option>
+    </select><br><br>
+    
+    <label for="exemplar">Exemplar da Biblioteca:</label><br>
+    <select id="exemplar" name="exemplar">
+      <option value="true">Sim</option>
+      <option value="false">Não</option>
+    </select><br><br>
+    
+    <button type="button" onclick="enviarCadastroLivro()">Enviar</button>
+  </form>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>
